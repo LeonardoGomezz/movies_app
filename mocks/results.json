@@ -1,0 +1,410 @@
+{
+ "results": [
+        {
+            "adult": false,
+            "backdrop_path": "/bHkn3yuOFdu5LJcq67Odofhx6cb.jpg",
+            "genre_ids": [
+                28,
+                14,
+                35
+            ],
+            "id": 845781,
+            "original_language": "en",
+            "original_title": "Red One",
+            "overview": "Tras el secuestro de Papá Noel (nombre en clave: RED ONE), el Jefe de Seguridad del Polo Norte (Dwayne Johnson) debe formar equipo con el cazarrecompensas más infame del mundo (Chris Evans) en una misión trotamundos llena de acción para salvar la Navidad.",
+            "popularity": 6893.324,
+            "poster_path": "/dpskAcm71w5v8zQ8RmPmJiP31Om.jpg",
+            "release_date": "2024-10-31",
+            "title": "Red One",
+            "video": false,
+            "vote_average": 6.9,
+            "vote_count": 924
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/3V4kLQg0kSqPLctI5ziYWabAZYF.jpg",
+            "genre_ids": [
+                28,
+                878,
+                12,
+                53
+            ],
+            "id": 912649,
+            "original_language": "en",
+            "original_title": "Venom: The Last Dance",
+            "overview": "Eddie y Venom están a la fuga. Perseguidos por sus sendos mundos y cada vez más cercados, el dúo se ve abocado a tomar una decisión devastadora que hará que caiga el telón sobre el último baile de Venom y Eddie.",
+            "popularity": 5097.39,
+            "poster_path": "/b0obWWCLRVRqRzlSK1LSGtADkLM.jpg",
+            "release_date": "2024-10-22",
+            "title": "Venom: El último baile",
+            "video": false,
+            "vote_average": 6.777,
+            "vote_count": 1675
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/tElnmtQ6yz1PjN1kePNl8yMSb59.jpg",
+            "genre_ids": [
+                16,
+                12,
+                10751,
+                35
+            ],
+            "id": 1241982,
+            "original_language": "en",
+            "original_title": "Moana 2",
+            "overview": "Tras recibir una inesperada llamada de sus antepasados, Vaiana debe viajar a los lejanos mares de Oceanía y adentrarse en peligrosas aguas perdidas para vivir una aventura sin precedentes.",
+            "popularity": 2860.274,
+            "poster_path": "/hSjM4OPwfF3PvWsVgV6SKd6GeXJ.jpg",
+            "release_date": "2024-11-21",
+            "title": "Vaiana 2",
+            "video": false,
+            "vote_average": 7.0,
+            "vote_count": 525
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/au3o84ub27qTZiMiEc9UYzN74V3.jpg",
+            "genre_ids": [
+                28,
+                878,
+                53
+            ],
+            "id": 1035048,
+            "original_language": "en",
+            "original_title": "Elevation",
+            "overview": "Un padre soltero y dos mujeres se aventuran desde la seguridad de sus hogares a enfrentarse a criaturas monstruosas para salvar la vida de un niño.",
+            "popularity": 1677.522,
+            "poster_path": "/uQhYBxOVFU6s9agD49FnGHwJqG5.jpg",
+            "release_date": "2024-11-07",
+            "title": "Elevation",
+            "video": false,
+            "vote_average": 6.4,
+            "vote_count": 174
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/c6nouvFYnmNO50WQDLcKMI3p0jA.jpg",
+            "genre_ids": [
+                12,
+                10751,
+                18,
+                16,
+                27
+            ],
+            "id": 762509,
+            "original_language": "en",
+            "original_title": "Mufasa: The Lion King",
+            "overview": "Rafiki debe transmitir la leyenda de Mufasa a la joven cachorro de león Kiara, hija de Simba y Nala, y con Timón y Pumba prestando su estilo característico. Mufasa, un cachorro huérfano, perdido y solo, conoce a un simpático león llamado Taka, heredero de un linaje real. Este encuentro casual pone en marcha un viaje de un extraordinario grupo de inadaptados que buscan su destino.",
+            "popularity": 1181.385,
+            "poster_path": "/nt4E7hZqKfIJbf8GOxZKCL1ahvG.jpg",
+            "release_date": "2024-12-18",
+            "title": "Mufasa: El rey león",
+            "video": false,
+            "vote_average": 7.2,
+            "vote_count": 21
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/nOoGIymGBNtA7AEN0B6nshSEQ1p.jpg",
+            "genre_ids": [
+                28,
+                80,
+                53
+            ],
+            "id": 974453,
+            "original_language": "en",
+            "original_title": "Absolution",
+            "overview": "Un curtido y peligroso gangster (Liam Neeson) descubre que está empezando a perder la memoria. Decidido a enmendar las cosas con su hija y rectificar los errores del pasado, antes de que sea demasiado tarde intentará hacer lo que sea para redimirse. Pero las garras del mundo criminal no lo soltarán tan fácilmente y se verá obligado a enfrentarse a la organización para la que lleva más de 20 años trabajando.",
+            "popularity": 1161.929,
+            "poster_path": "/6QsBGrKAs6pgypqkqVVyHICJnpY.jpg",
+            "release_date": "2024-10-31",
+            "title": "Absolution",
+            "video": false,
+            "vote_average": 6.122,
+            "vote_count": 143
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/ag66gJCiZ06q1GSJuQlhGLi3Udx.jpg",
+            "genre_ids": [
+                27,
+                53
+            ],
+            "id": 1138194,
+            "original_language": "en",
+            "original_title": "Heretic",
+            "overview": "Dos jóvenes misioneras se ven obligadas a demostrar su fe cuando llaman a la puerta equivocada y son recibidas por el diabólico Sr. Reed (Hugh Grant). Los tres se verán envueltos en un brutal juego del gato y el ratón durante una larga noche de tormenta.",
+            "popularity": 1149.864,
+            "poster_path": "/tXD5OCA0APsQNcjVdyl9COrwTfx.jpg",
+            "release_date": "2024-10-31",
+            "title": "Heretic",
+            "video": false,
+            "vote_average": 7.253,
+            "vote_count": 421
+        },
+        {
+            "adult": true,
+            "backdrop_path": "/iqvwqusm7gNP26SxbmwHXOkYFFF.jpg",
+            "genre_ids": [
+                18,
+                10749
+            ],
+            "id": 179387,
+            "original_language": "tl",
+            "original_title": "Heavenly Touch",
+            "overview": "",
+            "popularity": 1118.624,
+            "poster_path": "/ory8WuAqznTE7lfopTSymHpop2t.jpg",
+            "release_date": "2009-05-12",
+            "title": "Heavenly Touch",
+            "video": false,
+            "vote_average": 6.1,
+            "vote_count": 27
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/sQbFupSWM9wUdPj96NZNUOFSP5.jpg",
+            "genre_ids": [
+                28,
+                12,
+                53
+            ],
+            "id": 1000075,
+            "original_language": "fr",
+            "original_title": "Largo Winch: Le prix de l'argent",
+            "overview": "Con James Franco. Largo Winch queda destrozado tras el secuestro de su hijo. Decidido a encontrarlo, se lanza a una peligrosa misión para localizar a quienes lo llevaron a la quiebra.",
+            "popularity": 1028.182,
+            "poster_path": "/2inYwcffx6vEZjfWZPqEumt65Xt.jpg",
+            "release_date": "2024-07-31",
+            "title": "El precio del dinero: Una aventura de Largo Winch",
+            "video": false,
+            "vote_average": 5.5,
+            "vote_count": 51
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/eK8HiCLv4zo6iZ0NbjZnmD9LZkd.jpg",
+            "genre_ids": [
+                16,
+                28,
+                878,
+                10751
+            ],
+            "id": 1184918,
+            "original_language": "en",
+            "original_title": "The Wild Robot",
+            "overview": "Esta aventura épica cuenta la historia de una robot, Rozzum 7-1-3-4, \"Roz\" para abreviar, que naufraga en una isla inhabitada y debe aprender a adaptarse a los entornos rigurosos construyendo relaciones con los animales de la isla y convirtiéndose en la madre adoptiva de una cría de ganso huérfana.",
+            "popularity": 1024.933,
+            "poster_path": "/a0a7RC01aTa7pOnskgJb3mCD2Ba.jpg",
+            "release_date": "2024-09-08",
+            "title": "Robot salvaje",
+            "video": false,
+            "vote_average": 8.382,
+            "vote_count": 3514
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/3Be8kvRZsvKn1rQFHMLVLEUX9Sn.jpg",
+            "genre_ids": [
+                12,
+                35,
+                10751,
+                878
+            ],
+            "id": 939243,
+            "original_language": "en",
+            "original_title": "Sonic the Hedgehog 3",
+            "overview": "Sonic, Knuckles y Tails se reúnen para enfrentarse a un nuevo y poderoso adversario, Shadow, un misterioso villano cuyos poderes no se parecen a nada de lo que nuestros héroes han conocido hasta ahora. Con sus facultades superadas en todos los sentidos, el Equipo Sonic tendrá que establecer una insólita alianza con la esperanza de detener a Shadow y proteger el planeta.",
+            "popularity": 1012.04,
+            "poster_path": "/rqvtiGmHubDElsKxlCWPuCTkwPI.jpg",
+            "release_date": "2024-12-19",
+            "title": "Sonic 3: La película",
+            "video": false,
+            "vote_average": 8.2,
+            "vote_count": 10
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/v9Du2HC3hlknAvGlWhquRbeifwW.jpg",
+            "genre_ids": [
+                28,
+                12,
+                53
+            ],
+            "id": 539972,
+            "original_language": "en",
+            "original_title": "Kraven the Hunter",
+            "overview": "Kraven, un hombre cuya compleja relación con su despiadado padre, Nikolai Kravinoff, le hace emprender un camino de venganza con brutales consecuencias, motivándole a convertirse no sólo en el mejor cazador del mundo, sino también en uno de los más temidos.",
+            "popularity": 993.858,
+            "poster_path": "/gabWTSVhzltlKkmcqPoJmjKJxyb.jpg",
+            "release_date": "2024-12-11",
+            "title": "Kraven the Hunter",
+            "video": false,
+            "vote_average": 5.815,
+            "vote_count": 116
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/evFChfYeD2LqobEJf8iQsrYcGTw.jpg",
+            "genre_ids": [
+                28,
+                80,
+                53
+            ],
+            "id": 1182387,
+            "original_language": "en",
+            "original_title": "Armor",
+            "overview": "Un padre y un hijo trabajan como guardias de seguridad para una empresa de camiones blindados. Cuando se encuentran con un equipo de posibles ladrones mientras están atrapados en un puente, deben idear un plan para escapar y asegurar su supervivencia.",
+            "popularity": 868.125,
+            "poster_path": "/teKwEThO6MEJQ3IZKaOHAky6zvq.jpg",
+            "release_date": "2024-10-30",
+            "title": "Armor",
+            "video": false,
+            "vote_average": 5.5,
+            "vote_count": 76
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/t98L9uphqBSNn2Mkvdm3xSFCQyi.jpg",
+            "genre_ids": [
+                27,
+                878
+            ],
+            "id": 933260,
+            "original_language": "en",
+            "original_title": "The Substance",
+            "overview": "\"Tú, pero mejor en todos los sentidos\". Esa es la promesa de la sustancia, un producto revolucionario basado en la división celular, que crea un alter ego más joven, más bello, más perfecto.",
+            "popularity": 800.775,
+            "poster_path": "/w1PiIqM89r4AM7CiMEP4VLCEFUn.jpg",
+            "release_date": "2024-09-07",
+            "title": "La sustancia",
+            "video": false,
+            "vote_average": 7.2,
+            "vote_count": 2638
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/fyeyxFzZ3qYqDsaMVYF6sq3pp2n.jpg",
+            "genre_ids": [
+                28,
+                12,
+                53
+            ],
+            "id": 1167271,
+            "original_language": "en",
+            "original_title": "Weekend in Taipei",
+            "overview": "John Lawlor (Luke Evans) es un agente de la DEA casado con su trabajo: no hay malhechor que no pueda detener ni nada que no sacrifique para cerrar un caso. Joey Kang (Lun-Mei Gwei) es una de las mejores \"transportadoras\" de Taipei (Taiwán), de conducción y pensamiento rápidos, difícil de localizar e imposible de atrapar. Se suponía que ambos no debían enamorarse, pero el destino los unió... antes de que las fuerzas del crimen y la corrupción los separaran. Ahora, 15 años después, el destino pone a Joey y John en rumbo de colisión durante un fin de semana en Taipei. Y ambos descubrirán que lo único más difícil que enamorarse... es volver a enamorarse.",
+            "popularity": 798.467,
+            "poster_path": "/mMXop0s2MFstyODZvRliy4yzZW6.jpg",
+            "release_date": "2024-09-19",
+            "title": "Misión en Taipei",
+            "video": false,
+            "vote_average": 6.1,
+            "vote_count": 77
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/euYIwmwkmz95mnXvufEmbL6ovhZ.jpg",
+            "genre_ids": [
+                28,
+                12,
+                36
+            ],
+            "id": 558449,
+            "original_language": "en",
+            "original_title": "Gladiator II",
+            "overview": "Años después de presenciar la muerte del admirado héroe Máximo a manos de su tío, Lucio se ve forzado a entrar en el Coliseo tras ser testigo de la conquista de su hogar por parte de los tiránicos emperadores que dirigen Roma con puño de hierro. Con un corazón desbordante de furia y el futuro del imperio en juego, Lucio debe rememorar su pasado en busca de la fuerza y el honor que devuelvan al pueblo la gloria perdida de Roma.",
+            "popularity": 798.038,
+            "poster_path": "/vK1sK1B3WglfgVWPn6Xj4nNsw1q.jpg",
+            "release_date": "2024-11-05",
+            "title": "Gladiator II",
+            "video": false,
+            "vote_average": 6.684,
+            "vote_count": 1120
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/cBTwQKMd7Vn6rGTGBtoFLIfj7uM.jpg",
+            "genre_ids": [
+                16,
+                12,
+                28,
+                14
+            ],
+            "id": 1147416,
+            "original_language": "fr",
+            "original_title": "Miraculous World : Londres, la course contre le temps",
+            "overview": "Para salvar el futuro de un terrible destino, Marinette se convierte en Chronobug y se alía con Bunnyx para derrotar a un misterioso adversario que viaja a través del tiempo. ¿Quién es este nuevo supervillano y por qué está obsesionado con descubrir la identidad secreta de superheroína de Marinette? ¡La única esperanza de Marinette es derrotar a su nuevo oponente para evitar el fin de Ladybug y del tiempo!",
+            "popularity": 753.414,
+            "poster_path": "/gdZ4REoGYhUk4OoN9bqY2U1xykm.jpg",
+            "release_date": "2024-11-14",
+            "title": "Miraculous World: Las Aventuras de Ladybug en Londres, la carrera contra el tiempo",
+            "video": false,
+            "vote_average": 7.9,
+            "vote_count": 56
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/rWs3Q9bT7zCH6t004z67UGuWUwu.jpg",
+            "genre_ids": [
+                16,
+                35,
+                10751,
+                14,
+                12
+            ],
+            "id": 645757,
+            "original_language": "en",
+            "original_title": "That Christmas",
+            "overview": "Está siendo una Navidad inolvidable para los habitantes de Wellington-on-Sea, pero la peor tormenta de nieve de la historia altera los planes de todos... incluidos los de Papá Noel.",
+            "popularity": 741.443,
+            "poster_path": "/5DsEkHgKWFYFneeBT6WTeM6v36L.jpg",
+            "release_date": "2024-11-27",
+            "title": "Aquella Navidad",
+            "video": false,
+            "vote_average": 7.5,
+            "vote_count": 147
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/m2hs6YPVrzjvRC21SE9BeXtgqFW.jpg",
+            "genre_ids": [
+                16,
+                9648,
+                878,
+                28
+            ],
+            "id": 1299652,
+            "original_language": "en",
+            "original_title": "Watchmen: Chapter II",
+            "overview": "Sospechosos de los acontecimientos que envuelven a sus antiguos compañeros, Nite Owl y Silk Spectre se ven obligados a salir de su retiro para investigar. Mientras lidian con la ética personal, los demonios internos y una sociedad que se ha vuelto contra ellos, corren contra el reloj para descubrir un complot cada vez más profundo que podría desencadenar una guerra nuclear global",
+            "popularity": 739.436,
+            "poster_path": "/mIYN3HP6U2X7ZkDXT8xM47tXvOx.jpg",
+            "release_date": "2024-11-25",
+            "title": "Watchmen: Capítulo 2",
+            "video": false,
+            "vote_average": 7.6,
+            "vote_count": 54
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/18TSJF1WLA4CkymvVUcKDBwUJ9F.jpg",
+            "genre_ids": [
+                27,
+                53
+            ],
+            "id": 1034541,
+            "original_language": "en",
+            "original_title": "Terrifier 3",
+            "overview": "El payaso Art desata el caos entre los desprevenidos habitantes del condado de Miles mientras duermen plácidamente en Nochebuena. Tras sobrevivir a la masacre de Halloween perpetrada por el peor asesino en serie desde Jack el Destripador, Sienna y su hermano se esfuerzan por reconstruir sus vidas destrozadas. A medida que se acercan las fiestas de Navidad, intentan abrazar el espíritu navideño y dejar atrás los horrores del pasado. Pero justo cuando creen que están a salvo, el payaso Art regresa, decidido a convertir su alegría navideña en una nueva pesadilla. La temporada festiva se desmorona rápidamente mientras el payaso Art desata su retorcido terror marca de la casa, demostrando que ninguna festividad es segura.",
+            "popularity": 708.527,
+            "poster_path": "/iaGfB2itLC8exBvfLUoadS0Q6tP.jpg",
+            "release_date": "2024-10-09",
+            "title": "Terrifier 3",
+            "video": false,
+            "vote_average": 6.9,
+            "vote_count": 1240
+        }
+    ]
+}
