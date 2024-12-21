@@ -36,7 +36,7 @@ export const SearchBar = ({ onSearch }: SearchBarProps) => {
   };
 
   return (
-    <div className="relative max-w-md mx-auto my-6">
+    <div className="relative max-w-4xl mx-auto my-6">
       <input
         type="search"
         placeholder="Buscar películas..."

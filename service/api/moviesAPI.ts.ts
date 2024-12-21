@@ -70,3 +70,17 @@ export const getMovieVideos = async(id:string) =>{
     throw error
   }
 }
+
+export const getSimilarMovies = async(id:string) =>{
+  const getRequest = movieServiceRequest('GET')
+  try {
+    const res = await getRequest({
+      url: `/3/movie/${id}/similar?language=es-CO`
+    })
+    const response = res.data
+    return response
+  } catch (error) {
+    console.error('Error al realizar la solicitud', error)
+    throw error
+  }
+}

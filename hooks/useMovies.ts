@@ -4,6 +4,7 @@ import {
   getCredits,
   getMovieVideos,
   getPopularMovies,
+  getSimilarMovies,
   searchMovieById,
   searchMovies,
 } from "@/service/api/moviesAPI.ts"
@@ -14,6 +15,7 @@ const useMovies = () => {
   const [movieDetail, setMovieDetail] = useState<MovieDetail | null>(null);
   const [movieCredits, setMovieCredits] = useState<MovieCredistModel | null>(null);
   const [movieTrailer, setMovieTrailer] = useState<VideoResult | null>(null);
+  const [relatedMovies, setRelatedMovies] = useState<MoviesModel[]>([])
   const [totalPages, setTotalPages] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const [query, setQuery] = useState("");
@@ -73,6 +75,9 @@ const useMovies = () => {
           //obtener el primer trailer
           const firstTrailer = trailers.find((video: VideoResult) => video.type === "Trailer")
           setMovieTrailer(firstTrailer)
+          //obtener peliculas similares
+          const similarMovies = await getSimilarMovies(parsedId)
+          setRelatedMovies(similarMovies.results)
         } catch (error) {
           console.error(
             "Error al obtener los detalles o créditos de la película:",
@@ -109,6 +114,7 @@ const useMovies = () => {
     movieDetail,
     movieCredits,
     movieTrailer,
+    relatedMovies,
     currentPage,
     setCurrentPage: handlePageChange,
     totalPages,

@@ -11,10 +11,10 @@ export const MovieCard = ({id, poster_path, title, release_date, vote_average}: 
   }
   
   return (
-    <article className='bg-[#262626] w-[350px] h-[600px] mx-auto rounded-lg text-white cursor-pointer' onClick={()=>handleMovieId(id)}>
+    <article className='bg-[#262626] w-[350px] h-[600px] mx-auto rounded-lg text-white cursor-pointer'>
       <img className='h-[400px] object-fill w-[350px] rounded-t-lg' src={`https://image.tmdb.org/t/p/original${poster_path}`} alt={title} />
       <div className='p-4'>
-      <h3 className='font-Inter text-[14px] font-bold h-[50px]'>{title}</h3>
+      <h3 className='font-Inter text-[14px] font-bold h-[50px]' onClick={()=>handleMovieId(id)}>{title}</h3>
       <p className='font-normal text-xs mt-2'>{release_date}</p>
       <div className='flex justify-center gap-12 mt-2 items-start'>
         <div className='flex flex-col justify-center items-center'>

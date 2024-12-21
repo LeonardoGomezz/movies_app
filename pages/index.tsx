@@ -5,7 +5,7 @@ import useMovies from "@/hooks/useMovies";
 import { Pagination } from "@mui/material";
 
 export default function Home() {
-  const { movies, currentPage, setCurrentPage, totalPages, handleSearch, query, setQuery } = useMovies();
+  const { movies, currentPage, setCurrentPage, handleSearch, query, setQuery } = useMovies();
 
   const handlePageChange = (event: React.ChangeEvent<unknown>, value: number) => {
     setCurrentPage(value);
@@ -20,7 +20,7 @@ export default function Home() {
       <div className="px-4">
       <SearchBar query={query} onSearch={handleSearch} setQuery={setQuery} />
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-4 w-fit gap-12 mx-auto">
+      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-4 w-fit gap-12 mx-auto">
         {
           Array.isArray(movies) && movies.map(movie =>(
             <MovieCard
@@ -37,7 +37,7 @@ export default function Home() {
       <div className="my-12 flex justify-center">
         <Pagination
           page={currentPage}
-          count={totalPages}
+          count={500}
           onChange={handlePageChange}
           variant="outlined"
           shape="rounded"

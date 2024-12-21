@@ -12,8 +12,6 @@ export const Header = () => {
   const formatReleaseDate = movieDetail?.release_date.toString()
   const percentage = Math.round((movieDetail?.vote_average ?? 0) * 10)
 
-  console.log(movieDetail)
-
   const Item = styled(Sheet)(({ theme }) => ({
     ...theme.typography["body-sm"],
     textAlign: "center",
@@ -28,13 +26,13 @@ export const Header = () => {
   return (
     <div className="relative xl:h-[660px] flex xl:items-center">
       <img
-        className="h-[550px] xl:h-[660px] w-full absolute opacity-20 object-cover object-top hidden xl:block"
+        className="h-[550px] xl:h-[660px] w-full absolute opacity-60 object-cover object-top hidden xl:block"
         src={`https://image.tmdb.org/t/p/original${movieDetail?.backdrop_path}`}
         alt={movieDetail?.title}
       />
       <div className="relative z-10 w-full xl:px-10 2xl:px-20 flex flex-col xl:flex-row gap-10 xl:gap-20 xl:mt-8">
         <div className="relative">
-          <img className="xl:hidden opacity-20 w-full h-full object-cover absolute" src={`https://image.tmdb.org/t/p/original${movieDetail?.backdrop_path}`} alt="" />
+          <img className="xl:hidden opacity-60 w-full h-full object-cover absolute" src={`https://image.tmdb.org/t/p/original${movieDetail?.backdrop_path}`} alt="" />
           <div className="flex flex-col items-center sm:items-start relative z-20 mt-8 xl:mt-0 mb-8 xl:mb-0 sm:pl-10 xl:pl-0">
             <img
               className="w-[300px]"
@@ -100,7 +98,7 @@ export const Header = () => {
             )}
             </p>
           </div>
-          <div className="mt-4">
+          <div className="mt-4 pb-4">
             <p className="text-base font-normal mb-2">Genero:</p>
             <Stack
               direction={"row"}
