@@ -1,4 +1,5 @@
 export interface MovieCardProps {
+  id: number
   poster_path: string
   title: string
   release_date: string
@@ -7,4 +8,8 @@ export interface MovieCardProps {
 
 export interface SearchBarProps{
   onSearch: (query: string) => void
+}
+
+export interface TrailerButtonProps {
+  TrailerKey: string
 }

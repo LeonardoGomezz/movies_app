@@ -9,6 +9,7 @@ export default {
   theme: {
     fontFamily: {
       'Inter': ['Inter','serif'],
+      'ibm-plex-sans': ['IBM Plex Sans','serif'],
     },
     extend: {
       colors: {

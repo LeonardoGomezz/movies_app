@@ -20,6 +20,7 @@ export default function Home() {
       movies.map((movie) => (
         <MovieCard
           key={movie.id}
+          id={movie.id}
           poster_path={movie.poster_path}
           title={movie.title}
           release_date={movie.release_date}
