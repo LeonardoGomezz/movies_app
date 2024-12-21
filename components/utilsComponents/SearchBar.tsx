@@ -1,28 +1,39 @@
-import { SearchRounded, ClearRounded } from "@mui/icons-material"
-import React, { useState } from "react"
-import { SearchBarProps } from "./types"
+import { SearchRounded, ClearRounded } from "@mui/icons-material";
+import React, { useEffect, useState } from "react";
+import { SearchBarProps } from "./types";
+import { useRouter } from "next/router";
 
 export const SearchBar = ({ onSearch }: SearchBarProps) => {
-  const [inputValue, setInputValue] = useState<string>("")
+  const [inputValue, setInputValue] = useState<string>("");
+  const router = useRouter();
+  const { search } = router.query;
+
+  // Sincroniza el valor inicial del input con la query de la URL
+  useEffect(() => {
+    if (typeof search === "string") {
+      setInputValue(search);
+    }
+  }, [search]);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(event.target.value)
-  }
+    setInputValue(event.target.value);
+  };
 
   const handleSearch = () => {
-    onSearch(inputValue)
-  }
+    onSearch(inputValue);
+  };
 
   const handleClear = () => {
-    setInputValue("")
-    onSearch("")
-  }
+    setInputValue("");
+    onSearch("");
+    router.push({ pathname: "/", query: { page: 1 } }); // Resetea la búsqueda y mantiene la paginación
+  };
 
   const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
-      handleSearch()
+      handleSearch();
     }
-  }
+  };
 
   return (
     <div className="relative max-w-md mx-auto my-6">
@@ -49,5 +60,5 @@ export const SearchBar = ({ onSearch }: SearchBarProps) => {
         <SearchRounded />
       </button>
     </div>
-  )
-}
+  );
+};

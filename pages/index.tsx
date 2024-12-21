@@ -5,7 +5,7 @@ import useMovies from "@/hooks/useMovies";
 import { Pagination } from "@mui/material";
 
 export default function Home() {
-  const { movies, currentPage, setCurrentPage, totalPages, handleSearch } = useMovies();
+  const { movies, currentPage, setCurrentPage, totalPages, handleSearch, query, setQuery } = useMovies();
 
   const handlePageChange = (event: React.ChangeEvent<unknown>, value: number) => {
     setCurrentPage(value);
@@ -15,10 +15,15 @@ export default function Home() {
     });
   };
 
-  const renderMovies = () =>
-    movies.length > 0 ? (
-      movies.map((movie) => (
-        <MovieCard
+  return (
+    <Main>
+      <div className="px-4">
+      <SearchBar query={query} onSearch={handleSearch} setQuery={setQuery} />
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-4 w-fit gap-12 mx-auto">
+        {
+          Array.isArray(movies) && movies.map(movie =>(
+            <MovieCard
           key={movie.id}
           id={movie.id}
           poster_path={movie.poster_path}
@@ -26,18 +31,8 @@ export default function Home() {
           release_date={movie.release_date}
           vote_average={movie.vote_average}
         />
-      ))
-    ) : (
-      <p>No se encontraron películas</p>
-    );
-
-  return (
-    <Main>
-      <div className="px-4">
-        <SearchBar onSearch={handleSearch} />
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 w-fit gap-12 mx-auto">
-        {renderMovies()}
+          ))
+        }
       </div>
       <div className="my-12 flex justify-center">
         <Pagination

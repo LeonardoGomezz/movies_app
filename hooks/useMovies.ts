@@ -10,38 +10,43 @@ import {
 import { useRouter } from "next/router"
 
 const useMovies = () => {
-  const [movies, setMovies] = useState<MoviesModel[]>([])
-  const [movieDetail, setMovieDetail] = useState<MovieDetail | null>(null)
-  const [movieCredits, setMovieCredits] = useState<MovieCredistModel | null>(null)
-  const [movieTrailer, setMovieTrailer] = useState<VideoResult | null>(null)
-  const [totalPages, setTotalPages] = useState(0)
-  const [currentPage, setCurrentPage] = useState(1)
-  const [query, setQuery] = useState("")
-  const route = useRouter()
-  const { id } = route.query
+  const [movies, setMovies] = useState<MoviesModel[]>([]);
+  const [movieDetail, setMovieDetail] = useState<MovieDetail | null>(null);
+  const [movieCredits, setMovieCredits] = useState<MovieCredistModel | null>(null);
+  const [movieTrailer, setMovieTrailer] = useState<VideoResult | null>(null);
+  const [totalPages, setTotalPages] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [query, setQuery] = useState("");
+  const router = useRouter();
+  const { id, search, page } = router.query;
 
-  // Efecto para obtener las películas populares o realizar una búsqueda
-  useEffect(() => {
-    const fetchMovies = async () => {
-      try {
-        if (query) {
-          // Realizar búsqueda si hay query
-          const res = await searchMovies(query, currentPage)
-          setMovies(res.results)
-          setTotalPages(res.total_pages)
-        } else {
-          // Obtener películas populares si no hay query
-          const res = await getPopularMovies(currentPage)
-          setMovies(res.results)
-          setTotalPages(res.total_pages)
-        }
-      } catch (error) {
-        console.error("Error al obtener las películas:", error)
-      }
-    }
+ // Sincroniza la query y la página inicial desde la URL
+ useEffect(() => {
+  if (search) setQuery(search as string);
+  if (page) setCurrentPage(Number(page));
+}, [search, page]);
 
-    fetchMovies()
-  }, [currentPage, query])
+
+ // Efecto para obtener las películas populares o realizar una búsqueda
+ useEffect(() => {
+   const fetchMovies = async () => {
+     try {
+       if (query) {
+         const res = await searchMovies(query as string, currentPage);
+         setMovies(res.results);
+         setTotalPages(res.total_pages);
+       } else {
+         const res = await getPopularMovies(currentPage);
+         setMovies(res.results);
+         setTotalPages(res.total_pages);
+       }
+     } catch (error) {
+       console.error("Error al obtener las películas:", error);
+     }
+   };
+
+   fetchMovies();
+ }, [currentPage, query]);
 
   // efecto para manejar los detalles de la pelicula
   useEffect(() => {
@@ -80,11 +85,24 @@ const useMovies = () => {
     fetchMovieDetail()
   }, [id])
 
-  // Función para manejar la búsqueda
-  const handleSearch = (searchQuery: string) => {
-    setQuery(searchQuery)
-    setCurrentPage(1)
-  }
+    // Función para manejar la búsqueda
+    const handleSearch = (searchQuery: string) => {
+      setQuery(searchQuery);
+      setCurrentPage(1);
+      router.push({
+        pathname: "/",
+        query: { search: searchQuery, page: 1 },
+      });
+    };
+  
+    // Función para cambiar de página
+    const handlePageChange = (newPage: number) => {
+      setCurrentPage(newPage);
+      router.push({
+        pathname: "/",
+        query: { search: query, page: newPage },
+      });
+    };
 
   return {
     movies,
@@ -92,8 +110,9 @@ const useMovies = () => {
     movieCredits,
     movieTrailer,
     currentPage,
-    setCurrentPage,
+    setCurrentPage: handlePageChange,
     totalPages,
+    query,
     setQuery,
     handleSearch,
   }
