@@ -26,15 +26,15 @@ export const Header = () => {
   return (
     <div className="relative xl:h-[660px] flex xl:items-center">
       <img
-        className="h-[550px] xl:h-[660px] w-full absolute opacity-20 object-cover object-top hidden sm:block"
+        className="h-[550px] xl:h-[660px] w-full absolute opacity-20 object-cover object-top hidden xl:block"
         src={`https://image.tmdb.org/t/p/original${movieDetail?.backdrop_path}`}
         alt={movieDetail?.title}
       />
-      <div className="relative z-10 w-full sm:px-10 2xl:px-20 flex flex-col xl:flex-row gap-10 sm:gap-20 sm:mt-8">
+      <div className="relative z-10 w-full xl:px-10 2xl:px-20 flex flex-col xl:flex-row gap-10 xl:gap-20 xl:mt-8">
         <div className="relative">
-          <img className="sm:hidden opacity-20 w-full h-full object-cover absolute" src={`https://image.tmdb.org/t/p/original${movieDetail?.backdrop_path}`} alt="" />
+          <img className="xl:hidden opacity-20 w-full h-full object-cover absolute" src={`https://image.tmdb.org/t/p/original${movieDetail?.backdrop_path}`} alt="" />
 
-          <div className="flex flex-col items-center sm:items-start relative z-20 mt-8 sm:mt-0 mb-8 sm:mb-0">
+          <div className="flex flex-col items-center sm:items-start relative z-20 mt-8 xl:mt-0 mb-8 xl:mb-0 sm:pl-10">
             <img
               className="w-[300px]"
               src={`https://image.tmdb.org/t/p/original${movieDetail?.poster_path}`}
@@ -46,7 +46,7 @@ export const Header = () => {
               : null}
           </div>
         </div>
-        <div className="px-4 sm:px-0">
+        <div className="px-4 sm:px-10">
           <h1 className="text-2xl sm:text-[35px] font-bold font-ibm-plex-sans">
             {movieDetail?.title}
           </h1>
@@ -86,13 +86,13 @@ export const Header = () => {
             <p className="font-bold text-xl">Puntuacion</p>
           </div>
           <div className="flex items-center gap-2 mt-4">
-            <p>Actores:  
+            <p>Actores:&nbsp;
             {Array.isArray(movieCredits?.cast) && (
               <span>
                 {movieCredits.cast
                   .map((item) => item.name)
                   .slice(0, 4)
-                  .join(", ")}
+                  .join(", ")}.
               </span>
             )}
             </p>
@@ -100,8 +100,10 @@ export const Header = () => {
           <div className="mt-4">
             <p className="text-base font-normal mb-2">Genero:</p>
             <Stack
-              direction={{ xs: "column", sm: "row" }}
-              spacing={{ xs: 1, sm: 2, md: 4 }}
+              direction={"row"}
+              // spacing={{ xs: 1, sm: 2, md: 4 }}
+              flexWrap={"wrap"}
+              gap={1}
             >
               {Array.isArray(movieDetail?.genres) &&
                 movieDetail.genres.map((item) => (
