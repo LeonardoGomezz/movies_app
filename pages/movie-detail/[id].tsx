@@ -1,20 +1,20 @@
-import { Main } from "@/components/layout/Main";
-import { Header } from "@/components/movieDetails/Header";
-import { RelatedMovies } from "@/components/movieDetails/RelatedMovies";
-import useMovies from "@/hooks/useMovies";
-import Head from "next/head";
+import { Main } from "@/components/layout/Main"
+import { Header } from "@/components/movieDetails/Header"
+import { RelatedMovies } from "@/components/movieDetails/RelatedMovies"
+import useMovies from "@/hooks/useMovies"
+import Head from "next/head"
 
 export default function Home () {
-  const {movieDetail} = useMovies()
+  const {movieDetail, movieCredits, movieTrailer, relatedMovies} = useMovies()
 
   if (!movieDetail) {
-    return <p>Cargando...</p>; // Muestra un mensaje de carga si no se han cargado los detalles de la película
+    return <p>Cargando...</p>
   }
 
   // Extrae la información necesaria para SEO
-  const title = movieDetail.title;
-  const description = movieDetail.overview || "No hay descripción disponible";
-  const image = `https://image.tmdb.org/t/p/original${movieDetail.poster_path}`;
+  const title = movieDetail.title
+  const description = movieDetail.overview || "No hay descripción disponible"
+  const image = `https://image.tmdb.org/t/p/original${movieDetail.poster_path}`
  
   return(
     <Main>
@@ -27,8 +27,14 @@ export default function Home () {
         <meta property="og:image" content={image} />
         <meta property="og:type" content="movie" />
       </Head>
-      <Header/>
-      <RelatedMovies/>
+      <Header
+      details={movieDetail}
+      credits={movieCredits}
+      trailer={movieTrailer}
+      />
+      <RelatedMovies
+      related={relatedMovies}
+      />
     </Main>
   )
 }
