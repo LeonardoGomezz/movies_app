@@ -52,7 +52,6 @@
 
    Para obtener la información de las películas, se utiliza la API **The Movie Database (TMDb)**. Debes generar un token siguiendo los pasos de la [documentación oficial](https://developer.themoviedb.org/docs/getting-started). Una vez que hayas generado el token, cópialo y pégalo en la variable de entorno `NEXT_PUBLIC_AUTH_TOKEN`.
 
-
   5. **Inicia el servidor de desarrollo**:
 
     npm run dev
