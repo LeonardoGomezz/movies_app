@@ -1,6 +1,7 @@
 import { Main } from "@/components/layout/Main";
 import { MovieCard } from "@/components/utilsComponents/MovieCard";
 import { MoviesModel } from "@/service/types";
+import Head from "next/head";
 import { useEffect, useState } from "react";
 
 export default function FavoritesPage() {
@@ -19,6 +20,13 @@ export default function FavoritesPage() {
 
   return (
     <Main>
+      
+      <Head>
+        <title>Favoritos - Tu Lista de Películas</title>
+        <meta name="description" content="Descubre y accede rápidamente a todas las películas que has agregado a tu lista de favoritos. Gestiona tus filmes preferidos y mantén tus mejores elecciones siempre a la mano." />
+        <meta name="keywords" content="favoritos, películas favoritas, cine, listas de películas" />
+      </Head>
+
       <h2 className="text-center text-2xl lg:text-4xl font-bold mt-20">Tu lista de favoritos</h2>
 
       {loading ? (

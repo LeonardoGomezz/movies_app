@@ -3,6 +3,7 @@ import { MovieCard } from "@/components/utilsComponents/MovieCard";
 import { SearchBar } from "@/components/utilsComponents/SearchBar";
 import useMovies from "@/hooks/useMovies";
 import { Pagination } from "@mui/material";
+import Head from "next/head";
 
 export default function Home() {
   const { movies, totalPages, currentPage, setCurrentPage, handleSearch, query, setQuery } = useMovies();
@@ -17,6 +18,12 @@ export default function Home() {
 
   return (
     <Main>
+      <Head>
+        <title>Inicio - Tu Portal de Películas</title>
+        <meta name="description" content="Explora una amplia selección de películas con reseñas, detalles y trailers. Encuentra los mejores filmes, desde los más populares hasta los más recientes, en un solo lugar. ¡No te pierdas nada del mundo del cine!" />
+        <meta name="keywords" content="películas, cine, películas populares, reseñas de películas" />
+      </Head>
+
       <div className="px-4">
       <SearchBar query={query} onSearch={handleSearch} setQuery={setQuery} />
       </div>

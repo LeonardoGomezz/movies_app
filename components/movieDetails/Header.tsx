@@ -29,22 +29,28 @@ export const Header = () => {
         className="h-[550px] xl:h-[660px] w-full absolute opacity-60 object-cover object-top hidden xl:block"
         src={`https://image.tmdb.org/t/p/original${movieDetail?.backdrop_path}`}
         alt={movieDetail?.title}
+        title={movieDetail?.title}
       />
       <div className="relative z-10 w-full xl:px-10 2xl:px-20 flex flex-col xl:flex-row gap-10 xl:gap-20 xl:mt-8">
         <div className="relative">
-          <img className="xl:hidden opacity-60 w-full h-full object-cover absolute" src={`https://image.tmdb.org/t/p/original${movieDetail?.backdrop_path}`} alt="" />
+          <img
+            className="xl:hidden opacity-60 w-full h-full object-cover absolute"
+            src={`https://image.tmdb.org/t/p/original${movieDetail?.backdrop_path}`}
+            alt={movieDetail?.title}
+            title={movieDetail?.title}
+          />
           <div className="flex flex-col items-center sm:items-start relative z-20 mt-8 xl:mt-0 mb-8 xl:mb-0 sm:pl-10 xl:pl-0">
             <img
               className="w-[300px]"
               src={`https://image.tmdb.org/t/p/original${movieDetail?.poster_path}`}
               alt={movieDetail?.title}
-              />
-              <div className="w-[300px]">
-            {
-              movieTrailer && movieTrailer?.key ?
-              <TrailerButton TrailerKey={movieTrailer?.key}/>
-              : null}
-              </div>
+              title={movieDetail?.title}
+            />
+            <div className="w-[300px]">
+              {movieTrailer && movieTrailer?.key ? (
+                <TrailerButton TrailerKey={movieTrailer?.key} />
+              ) : null}
+            </div>
           </div>
         </div>
         <div className="px-4 sm:px-10 xl:px-0">
@@ -62,7 +68,9 @@ export const Header = () => {
             <p className="font-bold font-ibm-plex-sans text-xl sm:text-2xl mb-2">
               Resumen:
             </p>
-            <p className="font-normal text-sm 2xl:text-base">{movieDetail?.overview}</p>
+            <p className="font-normal text-sm 2xl:text-base">
+              {movieDetail?.overview}
+            </p>
           </div>
           <div className="mt-8 flex gap-4 items-center">
             <CircularProgress
@@ -87,15 +95,17 @@ export const Header = () => {
             <p className="font-bold text-xl">Puntuacion</p>
           </div>
           <div className="flex items-center gap-2 mt-4">
-            <p>Actores:&nbsp;
-            {Array.isArray(movieCredits?.cast) && (
-              <span>
-                {movieCredits.cast
-                  .map((item) => item.name)
-                  .slice(0, 4)
-                  .join(", ")}.
-              </span>
-            )}
+            <p>
+              Actores:&nbsp
+              {Array.isArray(movieCredits?.cast) && (
+                <span>
+                  {movieCredits.cast
+                    .map((item) => item.name)
+                    .slice(0, 4)
+                    .join(", ")}
+                  .
+                </span>
+              )}
             </p>
           </div>
           <div className="mt-4 pb-4">

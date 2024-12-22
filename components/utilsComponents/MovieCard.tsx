@@ -21,15 +21,16 @@ export const MovieCard = ({ item, onRemoveFavorite }: Props) => {
   }
 
   return (
-    <article className="bg-[#262626] w-[350px] h-[600px] mx-auto rounded-lg text-white cursor-pointer">
+    <article className="bg-[#262626] w-[350px] h-[600px] mx-auto rounded-lg text-white">
       <img
         className="h-[400px] object-fill w-[350px] rounded-t-lg"
         src={`https://image.tmdb.org/t/p/original${item?.poster_path}`}
         alt={item?.title}
+        title={item?.title}
       />
       <div className="p-4">
         <h3
-          className="font-Inter text-[14px] font-bold h-[50px]"
+          className="font-Inter text-[14px] font-bold h-[50px] cursor-pointer"
           onClick={() => window.location.href = `/movie-detail/${item.id}-${item.title}`}
         >
           {item?.title}
