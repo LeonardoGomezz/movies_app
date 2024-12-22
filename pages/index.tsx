@@ -1,20 +1,20 @@
-import { Main } from "@/components/layout/Main";
-import { MovieCard } from "@/components/utilsComponents/MovieCard";
-import { SearchBar } from "@/components/utilsComponents/SearchBar";
-import useMovies from "@/hooks/useMovies";
-import { Pagination } from "@mui/material";
-import Head from "next/head";
+import { Main } from "@/components/layout/Main"
+import { MovieCard } from "@/components/utilsComponents/MovieCard"
+import { SearchBar } from "@/components/utilsComponents/SearchBar"
+import useMovies from "@/hooks/useMovies"
+import { Pagination } from "@mui/material"
+import Head from "next/head"
 
 export default function Home() {
-  const { movies, totalPages, currentPage, setCurrentPage, handleSearch, query, setQuery } = useMovies();
+  const { movies, totalPages, currentPage, setCurrentPage, handleSearch, query, setQuery } = useMovies()
 
   const handlePageChange = (event: React.ChangeEvent<unknown>, value: number) => {
-    setCurrentPage(value);
+    setCurrentPage(value)
     window.scrollTo({
       top: 0,
       behavior: "smooth",
-    });
-  };
+    })
+  }
 
   return (
     <Main>
@@ -64,5 +64,5 @@ export default function Home() {
         />
       </div>
     </Main>
-  );
+  )
 }

@@ -1,22 +1,22 @@
-import { Main } from "@/components/layout/Main";
-import { MovieCard } from "@/components/utilsComponents/MovieCard";
-import { MoviesModel } from "@/service/types";
-import Head from "next/head";
-import { useEffect, useState } from "react";
+import { Main } from "@/components/layout/Main"
+import { MovieCard } from "@/components/utilsComponents/MovieCard"
+import { MoviesModel } from "@/service/types"
+import Head from "next/head"
+import { useEffect, useState } from "react"
 
 export default function FavoritesPage() {
-  const [favoriteList, setFavoriteList] = useState<MoviesModel[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [favoriteList, setFavoriteList] = useState<MoviesModel[]>([])
+  const [loading, setLoading] = useState<boolean>(true)
 
   useEffect(() => {
-    const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
-    setFavoriteList(favorites);
-    setLoading(false);  // Al terminar de cargar, actualizamos el estado de loading
-  }, []);
+    const favorites = JSON.parse(localStorage.getItem("favorites") || "[]")
+    setFavoriteList(favorites)
+    setLoading(false) 
+  }, [])
 
   const handleRemoveFavorite = (id: number) => {
-    setFavoriteList((prev) => prev.filter((movie) => movie.id !== id));
-  };
+    setFavoriteList((prev) => prev.filter((movie) => movie.id !== id))
+  }
 
   return (
     <Main>
@@ -49,5 +49,5 @@ export default function FavoritesPage() {
         </div>
       )}
     </Main>
-  );
+  )
 }

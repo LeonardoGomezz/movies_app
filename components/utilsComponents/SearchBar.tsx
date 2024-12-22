@@ -27,7 +27,6 @@ export const SearchBar = ({ onSearch }: SearchBarProps) => {
       toast.error('Por favor, ingresa al menos 3 caracteres para buscar.', {
         position: 'top-center'
       })
-      // setErrorMessage("Por favor, ingresa al menos 3 caracteres para buscar.")
       return
     }
     onSearch(inputValue)
