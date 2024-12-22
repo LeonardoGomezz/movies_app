@@ -1,42 +1,67 @@
-import FavoriteIcon from '@/public/icons/favoriteIcon'
-import React from 'react'
-import { MovieCardProps } from './types'
-import { CircularProgress, Typography } from '@mui/joy'
+import FavoriteIcon from "@/public/icons/favoriteIcon"
+import React from "react"
+import { CircularProgress, Typography } from "@mui/joy"
+import { MoviesModel } from "@/service/types"
+import useFavorites from "@/hooks/useFavorites"
 
-export const MovieCard = ({id, poster_path, title, release_date, vote_average}: MovieCardProps) => {
-  const percentage = Math.round(vote_average *10)
+interface Props {
+  item: MoviesModel
+  onRemoveFavorite?: (id: number) => void // Nueva prop
+}
 
-  const handleMovieId = (id: number) =>{
-    window.location.href = `/movie-detail/${id}-${title}`
+export const MovieCard = ({ item, onRemoveFavorite }: Props) => {
+  const percentage = Math.round(item?.vote_average * 10)
+  const { toggleFavorite, isFavorite } = useFavorites(item)
+
+  const handleRemoveFavorite = () => {
+    toggleFavorite()
+    if (isFavorite && onRemoveFavorite) {
+      onRemoveFavorite(item.id)
+    }
   }
-  
+
   return (
-    <article className='bg-[#262626] w-[350px] h-[600px] mx-auto rounded-lg text-white cursor-pointer'>
-      <img className='h-[400px] object-fill w-[350px] rounded-t-lg' src={`https://image.tmdb.org/t/p/original${poster_path}`} alt={title} />
-      <div className='p-4'>
-      <h3 className='font-Inter text-[14px] font-bold h-[50px]' onClick={()=>handleMovieId(id)}>{title}</h3>
-      <p className='font-normal text-xs mt-2'>{release_date}</p>
-      <div className='flex justify-center gap-12 mt-2 items-start'>
-        <div className='flex flex-col justify-center items-center'>
-          <p className='font-normal text-sm mb-3'>Rating</p>
-          <CircularProgress determinate value={percentage} 
-          variant='plain' 
-          thickness={4}
-          color={percentage > 69 ? 'success' : percentage > 50 ? 'warning' : 'danger' }
-          sx={{ 
-            '--CircularProgress-size': '48px',
-           }} 
-          >
-            <Typography level='body-xs' sx={{color: 'white'}}>{percentage}%</Typography>
-          </CircularProgress>
+    <article className="bg-[#262626] w-[350px] h-[600px] mx-auto rounded-lg text-white cursor-pointer">
+      <img
+        className="h-[400px] object-fill w-[350px] rounded-t-lg"
+        src={`https://image.tmdb.org/t/p/original${item?.poster_path}`}
+        alt={item?.title}
+      />
+      <div className="p-4">
+        <h3
+          className="font-Inter text-[14px] font-bold h-[50px]"
+          onClick={() => window.location.href = `/movie-detail/${item.id}-${item.title}`}
+        >
+          {item?.title}
+        </h3>
+        <p className="font-normal text-xs mt-2">{item?.release_date}</p>
+        <div className="flex justify-center gap-12 mt-2 items-start">
+          <div className="flex flex-col justify-center items-center">
+            <p className="font-normal text-sm mb-3">Rating</p>
+            <CircularProgress
+              determinate
+              value={percentage}
+              variant="plain"
+              thickness={4}
+              color={
+                percentage > 69 ? "success" :
+                percentage > 50 ? "warning" :
+                "danger"
+              }
+              sx={{ "--CircularProgress-size": "48px" }}
+            >
+              <Typography level="body-xs" sx={{ color: "white" }}>
+                {percentage}%
+              </Typography>
+            </CircularProgress>
+          </div>
+          <div className="flex flex-col justify-center items-center">
+            <p className="font-normal text-sm mb-4">Favorites</p>
+            <button onClick={handleRemoveFavorite}>
+              <FavoriteIcon width={45} height={45} fill={isFavorite ? "#ff6347" : "white"} />
+            </button>
+          </div>
         </div>
-        <div className='flex flex-col justify-center items-center'>
-          <p className='font-normal text-sm mb-4'>Favorites</p>
-          <button>
-          <FavoriteIcon width={45} height={45}/>
-          </button>
-        </div>
-      </div>
       </div>
     </article>
   )

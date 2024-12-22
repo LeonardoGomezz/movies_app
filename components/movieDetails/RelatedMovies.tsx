@@ -57,11 +57,7 @@ export const RelatedMovies = () => {
             relatedMovies.map((item) => (
               <SwiperSlide key={item.id}>
                 <MovieCard
-                  id={item.id}
-                  poster_path={item.poster_path}
-                  release_date={item.release_date}
-                  title={item.title}
-                  vote_average={item.vote_average}
+                 item={item}
                 />
               </SwiperSlide>
             ))}

@@ -1,5 +1,10 @@
 import { useEffect, useState } from "react"
-import { MovieCredistModel, MovieDetail, MoviesModel, VideoResult } from "@/service/types"
+import {
+  MovieCredistModel,
+  MovieDetail,
+  MoviesModel,
+  VideoResult,
+} from "@/service/types"
 import {
   getCredits,
   getMovieVideos,
@@ -11,44 +16,45 @@ import {
 import { useRouter } from "next/router"
 
 const useMovies = () => {
-  const [movies, setMovies] = useState<MoviesModel[]>([]);
-  const [movieDetail, setMovieDetail] = useState<MovieDetail | null>(null);
-  const [movieCredits, setMovieCredits] = useState<MovieCredistModel | null>(null);
-  const [movieTrailer, setMovieTrailer] = useState<VideoResult | null>(null);
+  const [movies, setMovies] = useState<MoviesModel[]>([])
+  const [movieDetail, setMovieDetail] = useState<MovieDetail | null>(null)
+  const [movieCredits, setMovieCredits] = useState<MovieCredistModel | null>(
+    null
+  )
+  const [movieTrailer, setMovieTrailer] = useState<VideoResult | null>(null)
   const [relatedMovies, setRelatedMovies] = useState<MoviesModel[]>([])
-  const [totalPages, setTotalPages] = useState(0);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [query, setQuery] = useState("");
-  const router = useRouter();
-  const { id, search, page } = router.query;
+  const [totalPages, setTotalPages] = useState(0)
+  const [currentPage, setCurrentPage] = useState(1)
+  const [query, setQuery] = useState("")
+  const router = useRouter()
+  const { id, search, page } = router.query
 
- // Sincroniza la query y la página inicial desde la URL
- useEffect(() => {
-  if (search) setQuery(search as string);
-  if (page) setCurrentPage(Number(page));
-}, [search, page]);
+  // Sincroniza la query y la página inicial desde la URL
+  useEffect(() => {
+    if (search) setQuery(search as string)
+    if (page) setCurrentPage(Number(page))
+  }, [search, page])
 
+  // Efecto para obtener las películas populares o realizar una búsqueda
+  useEffect(() => {
+    const fetchMovies = async () => {
+      try {
+        if (query) {
+          const res = await searchMovies(query as string, currentPage)
+          setMovies(res.results)
+          setTotalPages(res.total_pages)
+        } else {
+          const res = await getPopularMovies(currentPage)
+          setMovies(res.results)
+          setTotalPages(res.total_pages)
+        }
+      } catch (error) {
+        console.error("Error al obtener las películas:", error)
+      }
+    }
 
- // Efecto para obtener las películas populares o realizar una búsqueda
- useEffect(() => {
-   const fetchMovies = async () => {
-     try {
-       if (query) {
-         const res = await searchMovies(query as string, currentPage);
-         setMovies(res.results);
-         setTotalPages(res.total_pages);
-       } else {
-         const res = await getPopularMovies(currentPage);
-         setMovies(res.results);
-         setTotalPages(res.total_pages);
-       }
-     } catch (error) {
-       console.error("Error al obtener las películas:", error);
-     }
-   };
-
-   fetchMovies();
- }, [currentPage, query]);
+    fetchMovies()
+  }, [currentPage, query])
 
   // efecto para manejar los detalles de la pelicula
   useEffect(() => {
@@ -73,7 +79,9 @@ const useMovies = () => {
           const resMovieTrailers = await getMovieVideos(parsedId)
           const trailers = resMovieTrailers.results
           //obtener el primer trailer
-          const firstTrailer = trailers.find((video: VideoResult) => video.type === "Trailer")
+          const firstTrailer = trailers.find(
+            (video: VideoResult) => video.type === "Trailer"
+          )
           setMovieTrailer(firstTrailer)
           //obtener peliculas similares
           const similarMovies = await getSimilarMovies(parsedId)
@@ -90,24 +98,24 @@ const useMovies = () => {
     fetchMovieDetail()
   }, [id])
 
-    // Función para manejar la búsqueda
-    const handleSearch = (searchQuery: string) => {
-      setQuery(searchQuery);
-      setCurrentPage(1);
-      router.push({
-        pathname: "/",
-        query: { search: searchQuery, page: 1 },
-      });
-    };
-  
-    // Función para cambiar de página
-    const handlePageChange = (newPage: number) => {
-      setCurrentPage(newPage);
-      router.push({
-        pathname: "/",
-        query: { search: query, page: newPage },
-      });
-    };
+  // Función para manejar la búsqueda
+  const handleSearch = (searchQuery: string) => {
+    setQuery(searchQuery)
+    setCurrentPage(1)
+    router.push({
+      pathname: "/",
+      query: { search: searchQuery, page: 1 },
+    })
+  }
+
+  // Función para cambiar de página
+  const handlePageChange = (newPage: number) => {
+    setCurrentPage(newPage)
+    router.push({
+      pathname: "/",
+      query: { search: query, page: newPage },
+    })
+  }
 
   return {
     movies,
