@@ -27,6 +27,8 @@ export default function Home() {
       <div className="px-4">
       <SearchBar query={query} onSearch={handleSearch} setQuery={setQuery} />
       </div>
+      {
+        movies && movies.length > 0 ?
       <div className="mt-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-4 w-fit gap-12 mx-auto">
         {
           Array.isArray(movies) && movies.map(movie =>(
@@ -37,6 +39,11 @@ export default function Home() {
           ))
         }
       </div>
+      :
+      <div className="min-h-screen">
+        <h2 className="text-2xl sm:text-4xl text-center">Sin resultados</h2>
+      </div>
+      }
       <div className="my-12 flex justify-center">
         <Pagination
           page={currentPage}

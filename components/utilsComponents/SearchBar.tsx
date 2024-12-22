@@ -2,6 +2,7 @@ import { SearchRounded, ClearRounded } from "@mui/icons-material"
 import React, { useEffect, useState } from "react"
 import { SearchBarProps } from "./types"
 import { useRouter } from "next/router"
+import { toast } from "sonner"
 
 export const SearchBar = ({ onSearch }: SearchBarProps) => {
   const [inputValue, setInputValue] = useState<string>("")
@@ -17,9 +18,18 @@ export const SearchBar = ({ onSearch }: SearchBarProps) => {
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value)
+    if (event.target.value.length >= 3) {
+    }
   }
 
   const handleSearch = () => {
+    if (inputValue.trim().length < 3) {
+      toast.error('Por favor, ingresa al menos 3 caracteres para buscar.', {
+        position: 'top-center'
+      })
+      // setErrorMessage("Por favor, ingresa al menos 3 caracteres para buscar.")
+      return
+    }
     onSearch(inputValue)
   }
 
