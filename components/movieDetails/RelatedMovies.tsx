@@ -1,4 +1,3 @@
-import useMovies from "@/hooks/useMovies"
 import React, { useRef } from "react"
 import { Swiper, SwiperSlide } from "swiper/react"
 import "swiper/css"
@@ -9,11 +8,15 @@ import {
   ArrowBackIosRounded,
   ArrowForwardIosRounded,
 } from "@mui/icons-material"
+import { MoviesModel } from "@/service/types"
 
-export const RelatedMovies = () => {
+interface Props {
+  related: MoviesModel[] | null
+}
+
+export const RelatedMovies = ({related}: Props) => {
   SwiperCore.use([Navigation])
   const swiperRef = useRef<SwiperType | null>(null)
-  const { relatedMovies } = useMovies()
   
   return (
     <div className="mt-10 sm:mt-20">
@@ -53,8 +56,8 @@ export const RelatedMovies = () => {
             },
           }}
         >
-          {Array.isArray(relatedMovies) &&
-            relatedMovies.map((item) => (
+          {Array.isArray(related) &&
+            related.map((item) => (
               <SwiperSlide key={item.id}>
                 <MovieCard
                  item={item}
