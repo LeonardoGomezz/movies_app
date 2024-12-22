@@ -34,11 +34,11 @@ export default function FavoritesPage() {
           <p>Cargando...</p>
         </div>
       ) : favoriteList.length === 0 ? (
-        <div className="text-center mt-10">
+        <div className="text-center mt-10 min-h-screen">
           <h3>Tu lista de favoritos está vacía</h3>
         </div>
       ) : (
-        <div className="mt-10 mb-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-4 w-fit gap-12 mx-auto">
+        <div className="mt-10 mb-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-4 w-fit gap-12 mx-auto min-h-screen">
           {favoriteList.map((item) => (
             <MovieCard
               key={item.id}
