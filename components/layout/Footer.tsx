@@ -15,7 +15,7 @@ export const Footer = () => {
           </a>
           <ul className="text-lg text-center sm:flex items-cente justify-center gap-14 lg:gap-10 xl:gap-14 transition-all duration-500">
             <li>
-              <a href="/" className="text-white hover:text-gray-400">
+              <a href="https://github.com/LeonardoGomezz/movies_app" className="text-white hover:text-gray-400">
                 Recursos
               </a>
             </li>
