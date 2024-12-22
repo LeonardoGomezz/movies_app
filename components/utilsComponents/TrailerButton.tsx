@@ -1,12 +1,12 @@
-import { PlayArrowRounded } from "@mui/icons-material";
-import React, { useState } from "react";
-import { TrailerButtonProps } from "./types";
-import { Modal, ModalClose, ModalDialog } from "@mui/joy";
+import { PlayArrowRounded } from "@mui/icons-material"
+import React, { useState } from "react"
+import { TrailerButtonProps } from "./types"
+import { Modal, ModalClose, ModalDialog } from "@mui/joy"
 
 export const TrailerButton = ({ TrailerKey }: TrailerButtonProps) => {
-  const [showTrailer, setShowTrailer] = useState(false);
+  const [showTrailer, setShowTrailer] = useState(false)
 
-  const youtubeUrl = TrailerKey ? `https://www.youtube.com/embed/${TrailerKey}` : "";
+  const youtubeUrl = TrailerKey ? `https://www.youtube.com/embed/${TrailerKey}` : ""
   
   return (
     <div>
@@ -39,7 +39,7 @@ export const TrailerButton = ({ TrailerKey }: TrailerButtonProps) => {
         src={youtubeUrl}
         title="YouTube video player"
         frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allow="accelerometer autoplay clipboard-write encrypted-media gyroscope picture-in-picture web-share"
         referrerPolicy="strict-origin-when-cross-origin"
         allowFullScreen
         ></iframe>
@@ -49,5 +49,5 @@ export const TrailerButton = ({ TrailerKey }: TrailerButtonProps) => {
       </ModalDialog>
       </Modal>
     </div>
-  );
-};
+  )
+}

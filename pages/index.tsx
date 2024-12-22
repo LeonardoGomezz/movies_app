@@ -1,20 +1,20 @@
-import { Main } from "@/components/layout/Main";
-import { MovieCard } from "@/components/utilsComponents/MovieCard";
-import { SearchBar } from "@/components/utilsComponents/SearchBar";
-import useMovies from "@/hooks/useMovies";
-import { Pagination } from "@mui/material";
-import Head from "next/head";
+import { Main } from "@/components/layout/Main"
+import { MovieCard } from "@/components/utilsComponents/MovieCard"
+import { SearchBar } from "@/components/utilsComponents/SearchBar"
+import useMovies from "@/hooks/useMovies"
+import { Pagination } from "@mui/material"
+import Head from "next/head"
 
 export default function Home() {
-  const { movies, totalPages, currentPage, setCurrentPage, handleSearch, query, setQuery } = useMovies();
+  const { movies, totalPages, currentPage, setCurrentPage, handleSearch, query, setQuery } = useMovies()
 
   const handlePageChange = (event: React.ChangeEvent<unknown>, value: number) => {
-    setCurrentPage(value);
+    setCurrentPage(value)
     window.scrollTo({
       top: 0,
       behavior: "smooth",
-    });
-  };
+    })
+  }
 
   return (
     <Main>
@@ -27,6 +27,8 @@ export default function Home() {
       <div className="px-4">
       <SearchBar query={query} onSearch={handleSearch} setQuery={setQuery} />
       </div>
+      {
+        movies && movies.length > 0 ?
       <div className="mt-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-4 w-fit gap-12 mx-auto">
         {
           Array.isArray(movies) && movies.map(movie =>(
@@ -37,6 +39,11 @@ export default function Home() {
           ))
         }
       </div>
+      :
+      <div className="min-h-screen">
+        <h2 className="text-2xl sm:text-4xl text-center">Sin resultados</h2>
+      </div>
+      }
       <div className="my-12 flex justify-center">
         <Pagination
           page={currentPage}
@@ -57,5 +64,5 @@ export default function Home() {
         />
       </div>
     </Main>
-  );
+  )
 }

@@ -24,21 +24,24 @@ export const MovieCard = ({ item, onRemoveFavorite }: Props) => {
   return (
     <article className="bg-[#262626] w-[350px] h-[600px] mx-auto rounded-lg text-white">
       <Image
-        className="h-[400px] object-fill w-[350px] rounded-t-lg"
-        src={`https://image.tmdb.org/t/p/original${item?.poster_path}`} // URL de la imagen
+        className="h-[400px] object-fill w-[350px] rounded-t-lg cursor-pointer"
+        src={`https://image.tmdb.org/t/p/original${item?.poster_path}`}
         alt={item?.title}
         title={item?.title}
         width={350}
         height={400}
-        priority={true} // Precargar para mejorar LCP
+        priority={true}
+        onClick={() => window.location.href = `/movie-detail/${item.id}-${item.title}`}
       />
       <div className="p-4">
+        <div className="h-[50px]">
         <h3
-          className="font-Inter text-[14px] font-bold h-[50px] cursor-pointer"
+          className="text-wrap w-fit font-Inter text-[14px] font-bold cursor-pointer hover:text-blue-500"
           onClick={() => window.location.href = `/movie-detail/${item.id}-${item.title}`}
-        >
+          >
           {item?.title}
         </h3>
+          </div>
         <p className="font-normal text-xs mt-2">{item?.release_date}</p>
         <div className="flex justify-center gap-12 mt-2 items-start">
           <div className="flex flex-col justify-center items-center">
