@@ -3,6 +3,7 @@ import React from "react"
 import { CircularProgress, Typography } from "@mui/joy"
 import { MoviesModel } from "@/service/types"
 import useFavorites from "@/hooks/useFavorites"
+import Image from "next/image"
 
 interface Props {
   item: MoviesModel
@@ -22,11 +23,14 @@ export const MovieCard = ({ item, onRemoveFavorite }: Props) => {
 
   return (
     <article className="bg-[#262626] w-[350px] h-[600px] mx-auto rounded-lg text-white">
-      <img
+      <Image
         className="h-[400px] object-fill w-[350px] rounded-t-lg"
-        src={`https://image.tmdb.org/t/p/original${item?.poster_path}`}
+        src={`https://image.tmdb.org/t/p/original${item?.poster_path}`} // URL de la imagen
         alt={item?.title}
         title={item?.title}
+        width={350}
+        height={400}
+        priority={true} // Precargar para mejorar LCP
       />
       <div className="p-4">
         <h3

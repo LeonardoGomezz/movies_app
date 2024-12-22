@@ -15,6 +15,9 @@ const nextConfig: NextConfig = {
   env: {
     API_URL: process.env.NEXT_PUBLIC_API_URL,
   },
+  images: {
+    domains: ["image.tmdb.org"], // Agrega el dominio de las imágenes aquí
+  },
 };
 
 export default nextConfig;
